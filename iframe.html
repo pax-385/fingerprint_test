@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/@thumbmarkjs/thumbmarkjs/dist/thumbmark.umd.js"></script>
+
+</head>
+<body>
+  <h2>Iframe Page</h2>
+  <p id="fingerprintText">Your fingerprint is:</p>
+  <script>
+    ThumbmarkJS.getFingerprint().then(
+      function(fp) {
+        console.log(fp);
+        var fingerprintText = document.getElementById('fingerprintText');
+        fingerprintText.innerHTML += " " + fp;
+      }
+    );
+  </script>
+  
+</body>
+</html>
